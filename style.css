@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #dedede;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height of the banner */
+    overflow: hidden;
+}
+
+/* Banner images */
+.banner-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Hide all images by default */
+    animation: slide 10s infinite;
+}
+
+/* First image */
+.banner-slide:nth-child(1) {
+    animation-delay: 0s; /* First image starts immediately */
+}
+
+/* Second image */
+.banner-slide:nth-child(2) {
+    animation-delay: 5s; /* Second image starts after 5 seconds */
+}
+
+/* Slide transition animation */
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1; /* Image becomes visible */
+    }
+    50% {
+        opacity: 0; /* Image fades out */
+    }
+    100% {
+        opacity: 0; /* Ensure it stays hidden at the end */
+    }
+}
+
+/* Header title */
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #dedede;
+    font-family: 'Bebas Neue', sans-serif;
+    z-index: 1; /* Title stays above the slideshow */
+}
+
+/* Section styling */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+section:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Image styling */
+.section-img {
+    flex: 1;
+    max-width: 40%;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #6b4f4f;
+}
+
+/* Text styling */
+section h2 {
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+}
+
+section p,
+section ul {
+    flex: 2;
+    margin: 5px 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
